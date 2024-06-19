@@ -1,0 +1,9 @@
+services:
+  db_pg_security:
+    image: postgres:16.1
+    environment:
+      POSTGRES_DB: event-manager
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: user
+    ports:
+      - '5432:5432'
