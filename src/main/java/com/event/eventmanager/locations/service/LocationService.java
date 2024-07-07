@@ -1,7 +1,6 @@
 package com.event.eventmanager.locations.service;
 
-import com.event.eventmanager.locations.dto.LocationDto;
-import com.event.eventmanager.locations.entities.LocationEntity;
+import com.event.eventmanager.locations.models.Location;
 import com.event.eventmanager.locations.repository.LocationRepository;
 import com.event.eventmanager.locations.utils.LocationEntityMapper;
 import jakarta.persistence.EntityNotFoundException;
@@ -9,7 +8,6 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @AllArgsConstructor

@@ -1,4 +1,4 @@
-package com.event.eventmanager.locations.service;
+package com.event.eventmanager.locations.models;
 
 public record Location(
         Long id,

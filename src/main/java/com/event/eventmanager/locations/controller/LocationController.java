@@ -1,14 +1,14 @@
 package com.event.eventmanager.locations.controller;
 
 import com.event.eventmanager.locations.dto.LocationDto;
-import com.event.eventmanager.locations.service.Location;
+import com.event.eventmanager.locations.models.Location;
 import com.event.eventmanager.locations.service.LocationService;
 import com.event.eventmanager.locations.utils.LocationDtoMapper;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

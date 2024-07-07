@@ -3,6 +3,7 @@ package com.event.eventmanager.exeptions;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -52,6 +53,21 @@ public class GlobalExceptionHandler {
         );
         return ResponseEntity
                 .status(400)
+                .body(messageResponse);
+    }
+
+    @ExceptionHandler(value =
+            BadCredentialsException.class
+    )
+    public ResponseEntity<Object> handleIBadCredentialsException(Exception exception) {
+        log.error("Handle bad credentials exception", exception);
+        var messageResponse = new ErrorMessageResponse(
+                "Failed to authenticate",
+                exception.getMessage(),
+                LocalDateTime.now()
+        );
+        return ResponseEntity
+                .status(401)
                 .body(messageResponse);
     }
 }
