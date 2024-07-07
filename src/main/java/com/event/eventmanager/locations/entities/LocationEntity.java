@@ -1,7 +1,6 @@
 package com.event.eventmanager.locations.entities;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 @Getter
